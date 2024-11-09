@@ -1,0 +1,6 @@
+d=read.csv('updated_FPR.csv',header = TRUE)
+View(d)
+d=subset(d,select = -Name)
+View(d)
+finalmodel=lm(formula=Returns ~.,data=d)
+stepAIC(finalmodel,direction='both')
